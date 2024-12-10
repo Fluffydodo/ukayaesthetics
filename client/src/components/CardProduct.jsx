@@ -24,7 +24,7 @@ const CardProduct = ({data}) => {
             />
       </div>
       <div className='flex items-center gap-1'>
-        <div className='rounded text-xs w-fit p-[1px] px-2 text-red-600 bg-white'>
+        <div className='rounded text-xs w-fit p-[1px] px-2 text-red-600 bg-black'>
               10 min 
         </div>
         <div>

@@ -61,7 +61,7 @@ const OtpVerification = () => {
 
     return (
         <section className='w-full container mx-auto px-2'>
-            <div className='bg-white my-4 w-full max-w-lg mx-auto rounded p-7'>
+            <div className='bg-black my-4 w-full max-w-lg mx-auto rounded p-7'>
                 <p className='font-semibold text-lg'>Enter OTP</p>
                 <form className='grid gap-4 py-4' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>
@@ -94,7 +94,7 @@ const OtpVerification = () => {
 
                                             }}
                                             maxLength={1}
-                                            className='bg-blue-50 w-full max-w-16 p-2 border rounded outline-none focus:border-primary-200 text-center font-semibold'
+                                            className='bg-black w-full max-w-16 p-2 border rounded outline-none focus:border-primary-200 text-center font-semibold'
                                         />
                                     )
                                 })

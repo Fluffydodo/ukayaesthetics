@@ -148,7 +148,7 @@ const UploadProduct = () => {
   // },[])
   return (
     <section className=''>
-        <div className='p-2   bg-white shadow-md flex items-center justify-between'>
+        <div className='p-2   bg-black shadow-md flex items-center justify-between'>
             <h2 className='font-semibold'>Upload Product</h2>
         </div>
         <div className='grid p-3'>
@@ -163,7 +163,7 @@ const UploadProduct = () => {
                     value={data.name}
                     onChange={handleChange}
                     required
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                   />
                 </div>
                 <div className='grid gap-1'>
@@ -178,13 +178,13 @@ const UploadProduct = () => {
                     required
                     multiple 
                     rows={3}
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded resize-none'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded resize-none'
                   />
                 </div>
                 <div>
                     <p className='font-medium'>Image</p>
                     <div>
-                      <label htmlFor='productImage' className='bg-blue-50 h-24 border rounded flex justify-center items-center cursor-pointer'>
+                      <label htmlFor='productImage' className='bg-black h-24 border rounded flex justify-center items-center cursor-pointer'>
                           <div className='text-center flex justify-center items-center flex-col'>
                             {
                               imageLoading ?  <Loading/> : (
@@ -208,7 +208,7 @@ const UploadProduct = () => {
                         {
                           data.image.map((img,index) =>{
                               return(
-                                <div key={img+index} className='h-20 mt-1 w-20 min-w-20 bg-blue-50 border relative group'>
+                                <div key={img+index} className='h-20 mt-1 w-20 min-w-20 bg-black border relative group'>
                                   <img
                                     src={img}
                                     alt={img}
@@ -230,7 +230,7 @@ const UploadProduct = () => {
                   <label className='font-medium'>Category</label>
                   <div>
                     <select
-                      className='bg-blue-50 border w-full p-2 rounded'
+                      className='bg-black border w-full p-2 rounded'
                       value={selectCategory}
                       onChange={(e)=>{
                         const value = e.target.value 
@@ -258,7 +258,7 @@ const UploadProduct = () => {
                       {
                         data.category.map((c,index)=>{
                           return(
-                            <div key={c._id+index+"productsection"} className='text-sm flex items-center gap-1 bg-blue-50 mt-2'>
+                            <div key={c._id+index+"productsection"} className='text-sm flex items-center gap-1 bg-black mt-2'>
                               <p>{c.name}</p>
                               <div className='hover:text-red-500 cursor-pointer' onClick={()=>handleRemoveCategory(index)}>
                                 <IoClose size={20}/>
@@ -274,7 +274,7 @@ const UploadProduct = () => {
                   <label className='font-medium'>Sub Category</label>
                   <div>
                     <select
-                      className='bg-blue-50 border w-full p-2 rounded'
+                      className='bg-black border w-full p-2 rounded'
                       value={selectSubCategory}
                       onChange={(e)=>{
                         const value = e.target.value 
@@ -302,7 +302,7 @@ const UploadProduct = () => {
                       {
                         data.subCategory.map((c,index)=>{
                           return(
-                            <div key={c._id+index+"productsection"} className='text-sm flex items-center gap-1 bg-blue-50 mt-2'>
+                            <div key={c._id+index+"productsection"} className='text-sm flex items-center gap-1 bg-black mt-2'>
                               <p>{c.name}</p>
                               <div className='hover:text-red-500 cursor-pointer' onClick={()=>handleRemoveSubCategory(index)}>
                                 <IoClose size={20}/>
@@ -325,7 +325,7 @@ const UploadProduct = () => {
                     value={data.unit}
                     onChange={handleChange}
                     required
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                   />
                 </div>
 
@@ -339,7 +339,7 @@ const UploadProduct = () => {
                     value={data.stock}
                     onChange={handleChange}
                     required
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                   />
                 </div>
 
@@ -353,7 +353,7 @@ const UploadProduct = () => {
                     value={data.price}
                     onChange={handleChange}
                     required
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                   />
                 </div>
 
@@ -367,7 +367,7 @@ const UploadProduct = () => {
                     value={data.discount}
                     onChange={handleChange}
                     required
-                    className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                   />
                 </div>
 
@@ -395,7 +395,7 @@ const UploadProduct = () => {
                                   })
                               }}
                               required
-                              className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                              className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                             />
                           </div>
                         )

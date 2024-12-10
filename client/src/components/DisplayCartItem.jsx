@@ -39,7 +39,7 @@ const DisplayCartItem = ({close}) => {
                 </button>
             </div>
 
-            <div className='min-h-[75vh] lg:min-h-[80vh] h-full max-h-[calc(100vh-150px)] bg-blue-50 p-2 flex flex-col gap-4'>
+            <div className='min-h-[75vh] lg:min-h-[80vh] h-full max-h-[calc(100vh-150px)] bg-black p-2 flex flex-col gap-4'>
                 {/***display items */}
                 {
                     cartItem[0] ? (
@@ -74,7 +74,7 @@ const DisplayCartItem = ({close}) => {
                                         )
                                     }
                             </div>
-                            <div className='bg-white p-4'>
+                            <div className='bg-black p-4'>
                                 <h3 className='font-semibold'>Bill details</h3>
                                 <div className='flex gap-4 justify-between ml-1'>
                                     <p>Items total</p>
@@ -95,7 +95,7 @@ const DisplayCartItem = ({close}) => {
                             </div>
                         </>
                     ) : (
-                        <div className='bg-white flex flex-col justify-center items-center'>
+                        <div className='bg-black flex flex-col justify-center items-center'>
                             <img
                                 src={imageEmpty}
                                 className='w-full h-full object-scale-down' 

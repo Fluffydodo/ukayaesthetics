@@ -83,17 +83,17 @@ const CheckoutPage = () => {
     }
   }
   return (
-    <section className='bg-blue-50'>
+    <section className='bg-black'>
       <div className='container mx-auto p-4 flex flex-col lg:flex-row w-full gap-5 justify-between'>
         <div className='w-full'>
           {/***address***/}
           <h3 className='text-lg font-semibold'>Choose your address</h3>
-          <div className='bg-white p-2 grid gap-4'>
+          <div className='bg-black p-2 grid gap-4'>
             {
               addressList.map((address, index) => {
                 return (
                   <label htmlFor={"address" + index} className={!address.status && "hidden"}>
-                    <div className='border rounded p-3 flex gap-3 hover:bg-blue-50'>
+                    <div className='border rounded p-3 flex gap-3 hover:bg-black'>
                       <div>
                         <input id={"address" + index} type='radio' value={index} onChange={(e) => setSelectAddress(e.target.value)} name='address' />
                       </div>
@@ -109,7 +109,7 @@ const CheckoutPage = () => {
                 )
               })
             }
-            <div onClick={() => setOpenAddress(true)} className='h-16 bg-blue-50 border-2 border-dashed flex justify-center items-center cursor-pointer'>
+            <div onClick={() => setOpenAddress(true)} className='h-16 bg-black border-2 border-dashed flex justify-center items-center cursor-pointer'>
               Add address
             </div>
           </div>
@@ -118,10 +118,10 @@ const CheckoutPage = () => {
 
         </div>
 
-        <div className='w-full max-w-md bg-white py-4 px-2'>
+        <div className='w-full max-w-md bg-black py-4 px-2'>
           {/**summary**/}
           <h3 className='text-lg font-semibold'>Summary</h3>
-          <div className='bg-white p-4'>
+          <div className='bg-black p-4'>
             <h3 className='font-semibold'>Bill details</h3>
             <div className='flex gap-4 justify-between ml-1'>
               <p>Items total</p>

@@ -84,7 +84,7 @@ const UploadSubCategoryModel = ({close, fetchData}) => {
 
   return (
     <section className='fixed top-0 right-0 bottom-0 left-0 bg-neutral-800 bg-opacity-70 z-50 flex items-center justify-center p-4'>
-        <div className='w-full max-w-5xl bg-white p-4 rounded'>
+        <div className='w-full max-w-5xl bg-black p-4 rounded'>
             <div className='flex items-center justify-between gap-3'>
                 <h1 className='font-semibold'>Add Sub Category</h1>
                 <button onClick={close}>
@@ -99,13 +99,13 @@ const UploadSubCategoryModel = ({close, fetchData}) => {
                             name='name'
                             value={subCategoryData.name}
                             onChange={handleChange}
-                            className='p-3 bg-blue-50 border outline-none focus-within:border-primary-200 rounded '
+                            className='p-3 bg-black border outline-none focus-within:border-primary-200 rounded '
                         />
                     </div>
                     <div className='grid gap-1'>
                         <p>Image</p>
                         <div className='flex flex-col lg:flex-row items-center gap-3'>
-                            <div className='border h-36 w-full lg:w-36 bg-blue-50 flex items-center justify-center'>
+                            <div className='border h-36 w-full lg:w-36 bg-black flex items-center justify-center'>
                                 {
                                     !subCategoryData.image ? (
                                         <p className='text-sm text-neutral-400'>No Image</p>
@@ -140,7 +140,7 @@ const UploadSubCategoryModel = ({close, fetchData}) => {
                                 {
                                     subCategoryData.category.map((cat,index)=>{
                                         return(
-                                            <p key={cat._id+"selectedValue"} className='bg-white shadow-md px-1 m-1 flex items-center gap-2'>
+                                            <p key={cat._id+"selectedValue"} className='bg-black shadow-md px-1 m-1 flex items-center gap-2'>
                                                 {cat.name}
                                                 <div className='cursor-pointer hover:text-red-600' onClick={()=>handleRemoveCategorySelected(cat._id)}>
                                                     <IoClose size={20}/>
@@ -180,7 +180,7 @@ const UploadSubCategoryModel = ({close, fetchData}) => {
 
                     <button
                         className={`px-4 py-2 border
-                            ${subCategoryData?.name && subCategoryData?.image && subCategoryData?.category[0] ? "bg-primary-200 hover:bg-primary-100" : "bg-gray-200"}    
+                            ${subCategoryData?.name && subCategoryData?.image && subCategoryData?.category[0] ? "bg-primary-200 hover:bg-primary-100" : "bg-black"}    
                             font-semibold
                         `}
                     >

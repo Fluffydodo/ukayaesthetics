@@ -150,9 +150,9 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
 
   return (
     <section className='fixed top-0 right-0 left-0 bottom-0 bg-black z-50 bg-opacity-70 p-4'>
-      <div className='bg-white w-full p-4 max-w-2xl mx-auto rounded overflow-y-auto h-full max-h-[95vh]'>
+      <div className='bg-black w-full p-4 max-w-2xl mx-auto rounded overflow-y-auto h-full max-h-[95vh]'>
         <section className=''>
-          <div className='p-2   bg-white shadow-md flex items-center justify-between'>
+          <div className='p-2   bg-black shadow-md flex items-center justify-between'>
             <h2 className='font-semibold'>Upload Product</h2>
             <button onClick={close}>
               <IoClose size={20}/>
@@ -170,7 +170,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   value={data.name}
                   onChange={handleChange}
                   required
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                 />
               </div>
               <div className='grid gap-1'>
@@ -185,13 +185,13 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   required
                   multiple
                   rows={3}
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded resize-none'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded resize-none'
                 />
               </div>
               <div>
                 <p className='font-medium'>Image</p>
                 <div>
-                  <label htmlFor='productImage' className='bg-blue-50 h-24 border rounded flex justify-center items-center cursor-pointer'>
+                  <label htmlFor='productImage' className='bg-black h-24 border rounded flex justify-center items-center cursor-pointer'>
                     <div className='text-center flex justify-center items-center flex-col'>
                       {
                         imageLoading ? <Loading /> : (
@@ -215,7 +215,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                     {
                       data.image.map((img, index) => {
                         return (
-                          <div key={img + index} className='h-20 mt-1 w-20 min-w-20 bg-blue-50 border relative group'>
+                          <div key={img + index} className='h-20 mt-1 w-20 min-w-20 bg-black border relative group'>
                             <img
                               src={img}
                               alt={img}
@@ -237,7 +237,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                 <label className='font-medium'>Category</label>
                 <div>
                   <select
-                    className='bg-blue-50 border w-full p-2 rounded'
+                    className='bg-black border w-full p-2 rounded'
                     value={selectCategory}
                     onChange={(e) => {
                       const value = e.target.value
@@ -265,7 +265,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                     {
                       data.category.map((c, index) => {
                         return (
-                          <div key={c._id + index + "productsection"} className='text-sm flex items-center gap-1 bg-blue-50 mt-2'>
+                          <div key={c._id + index + "productsection"} className='text-sm flex items-center gap-1 bg-black mt-2'>
                             <p>{c.name}</p>
                             <div className='hover:text-red-500 cursor-pointer' onClick={() => handleRemoveCategory(index)}>
                               <IoClose size={20} />
@@ -281,7 +281,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                 <label className='font-medium'>Sub Category</label>
                 <div>
                   <select
-                    className='bg-blue-50 border w-full p-2 rounded'
+                    className='bg-black border w-full p-2 rounded'
                     value={selectSubCategory}
                     onChange={(e) => {
                       const value = e.target.value
@@ -309,7 +309,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                     {
                       data.subCategory.map((c, index) => {
                         return (
-                          <div key={c._id + index + "productsection"} className='text-sm flex items-center gap-1 bg-blue-50 mt-2'>
+                          <div key={c._id + index + "productsection"} className='text-sm flex items-center gap-1 bg-black mt-2'>
                             <p>{c.name}</p>
                             <div className='hover:text-red-500 cursor-pointer' onClick={() => handleRemoveSubCategory(index)}>
                               <IoClose size={20} />
@@ -332,7 +332,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   value={data.unit}
                   onChange={handleChange}
                   required
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                 />
               </div>
 
@@ -346,7 +346,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   value={data.stock}
                   onChange={handleChange}
                   required
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                 />
               </div>
 
@@ -360,7 +360,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   value={data.price}
                   onChange={handleChange}
                   required
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                 />
               </div>
 
@@ -374,7 +374,7 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                   value={data.discount}
                   onChange={handleChange}
                   required
-                  className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                 />
               </div>
 
@@ -402,14 +402,14 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                           })
                         }}
                         required
-                        className='bg-blue-50 p-2 outline-none border focus-within:border-primary-200 rounded'
+                        className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
                       />
                     </div>
                   )
                 })
               }
 
-              <div onClick={() => setOpenAddField(true)} className=' hover:bg-primary-200 bg-white py-1 px-3 w-32 text-center font-semibold border border-primary-200 hover:text-neutral-900 cursor-pointer rounded'>
+              <div onClick={() => setOpenAddField(true)} className=' hover:bg-primary-200 bg-black py-1 px-3 w-32 text-center font-semibold border border-primary-200 hover:text-neutral-900 cursor-pointer rounded'>
                 Add Fields
               </div>
 

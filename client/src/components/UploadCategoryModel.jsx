@@ -67,7 +67,7 @@ const UploadCategoryModel = ({close, fetchData}) => {
     }
   return (
     <section className='fixed top-0 bottom-0 left-0 right-0 p-4 bg-neutral-800 bg-opacity-60 flex items-center justify-center'>
-        <div className='bg-white max-w-4xl w-full p-4 rounded'>
+        <div className='bg-black max-w-4xl w-full p-4 rounded'>
             <div className='flex items-center justify-between'>
                 <h1 className='font-semibold'>Category</h1>
                 <button onClick={close} className='w-fit block ml-auto'>
@@ -84,13 +84,13 @@ const UploadCategoryModel = ({close, fetchData}) => {
                         value={data.name}
                         name='name'
                         onChange={handleOnChange}
-                        className='bg-blue-50 p-2 border border-blue-100 focus-within:border-primary-200 outline-none rounded'
+                        className='bg-black p-2 border border-blue-100 focus-within:border-primary-200 outline-none rounded'
                     />
                 </div>
                 <div className='grid gap-1'>
                     <p>Image</p>
                     <div className='flex gap-4 flex-col lg:flex-row items-center'>
-                        <div className='border bg-blue-50 h-36 w-full lg:w-36 flex items-center justify-center rounded'>
+                        <div className='border bg-black h-36 w-full lg:w-36 flex items-center justify-center rounded'>
                             {
                                 data.image ? (
                                     <img

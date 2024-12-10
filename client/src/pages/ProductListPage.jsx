@@ -86,7 +86,7 @@ const ProductListPage = () => {
                   ${subCategoryId === s._id ? "bg-red-100" : ""}
                 `}
                 >
-                  <div className='w-fit max-w-28 mx-auto lg:mx-0 bg-white rounded  box-border' >
+                  <div className='w-fit max-w-28 mx-auto lg:mx-0 bg-black rounded  box-border' >
                     <img
                       src={s.image}
                       alt='subCategory'
@@ -103,7 +103,7 @@ const ProductListPage = () => {
 
         {/**Product **/}
         <div className='sticky top-20'>
-          <div className='bg-white shadow-md p-4 z-10'>
+          <div className='bg-black shadow-md p-4 z-10'>
             <h3 className='font-semibold'>{subCategoryName}</h3>
           </div>
           <div>

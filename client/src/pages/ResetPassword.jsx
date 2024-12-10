@@ -92,7 +92,7 @@ const ResetPassword = () => {
                 <form className='grid gap-4 py-4' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>
                         <label htmlFor='newPassword'>New Password :</label>
-                        <div className='bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200'>
+                        <div className='bg-black p-2 border rounded flex items-center focus-within:border-primary-200'>
                             <input
                                 type={showPassword ? "text" : "password"}
                                 id='password'
@@ -116,7 +116,7 @@ const ResetPassword = () => {
 
                     <div className='grid gap-1'>
                         <label htmlFor='confirmPassword'>Confirm Password :</label>
-                        <div className='bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200'>
+                        <div className='bg-black p-2 border rounded flex items-center focus-within:border-primary-200'>
                             <input
                                 type={showConfirmPassword ? "text" : "password"}
                                 id='password'
