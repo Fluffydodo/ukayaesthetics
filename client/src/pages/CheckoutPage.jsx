@@ -52,36 +52,78 @@ const CheckoutPage = () => {
       }
   }
 
-  const handleOnlinePayment = async()=>{
+  const handleOnlinePayment = async () => {
     try {
-        toast.loading("Loading...")
-        const stripePublicKey = import.meta.env.VITE_STRIPE_PUBLIC_KEY
-        const stripePromise = await loadStripe(stripePublicKey)
-       
+        // Display a loading message (optional)
+        toast.loading("Redirecting to GCash...");
+
+        // GCash QR Code URL
+        const qrCodeLink = "https://res.cloudinary.com/dax4jdd8g/image/upload/v1733846218/j2brcqpra7wdi7n6iiqh.jpg";
+
+        // Send payment information to the server (MongoDB integration)
         const response = await Axios({
-            ...SummaryApi.payment_url,
-            data : {
-              list_items : cartItemsList,
-              addressId : addressList[selectAddress]?._id,
-              subTotalAmt : totalPrice,
-              totalAmt :  totalPrice,
-            }
-        })
+          ...SummaryApi.payment_url,
+          data: {
+              list_items: cartItemsList,
+              addressId: addressList[selectAddress]?._id,
+              subTotalAmt: totalPrice,
+              totalAmt: totalPrice,
+          },
+      });
 
-        const { data : responseData } = response
+      // Check if the response was successful
+      const { data: responseData } = response;
+      if (responseData?.success) {
+          toast.dismiss(); // Dismiss the loading toast
+          toast.success("Payment information saved! Redirecting to GCash...");
 
-        stripePromise.redirectToCheckout({ sessionId : responseData.id })
-        
-        if(fetchCartItem){
-          fetchCartItem()
-        }
-        if(fetchOrder){
-          fetchOrder()
-        }
-    } catch (error) {
-        AxiosToastError(error)
-    }
+          // Redirect to the GCash QR code link
+          window.open(qrCodeLink, "_blank"); // Opens the QR code in a new tab
+
+          // Fetch updated cart and order data (optional)
+          if (fetchCartItem) fetchCartItem();
+          if (fetchOrder) fetchOrder();
+      } else {
+          throw new Error("Failed to save payment information. Please try again.");
+      }
+  } catch (error) {
+      // Handle errors gracefully
+      toast.dismiss(); // Dismiss the loading toast
+      AxiosToastError(error);
+      console.error("Error during payment:", error);
   }
+  }
+
+  //const handleOnlinePayment = async()=>{
+  //  try {
+  //      toast.loading("Loading...")
+  //      const stripePublicKey = import.meta.env.VITE_STRIPE_PUBLIC_KEY
+  //      const stripePromise = await loadStripe(stripePublicKey)
+  //     
+  //      const response = await Axios({
+  //          ...SummaryApi.payment_url,
+  //          data : {
+  //            list_items : cartItemsList,
+  //            addressId : addressList[selectAddress]?._id,
+  //            subTotalAmt : totalPrice,
+  //            totalAmt :  totalPrice,
+  //          }
+  //      })
+//
+  //      const { data : responseData } = response
+//
+  //      stripePromise.redirectToCheckout({ sessionId : responseData.id })
+  //      
+  //      if(fetchCartItem){
+  //        fetchCartItem()
+  //      }
+  //      if(fetchOrder){
+  //        fetchOrder()
+  //      }
+  //  } catch (error) {
+  //      AxiosToastError(error)
+  //  }
+  //}
   return (
     <section className='bg-black'>
       <div className='container mx-auto p-4 flex flex-col lg:flex-row w-full gap-5 justify-between'>
