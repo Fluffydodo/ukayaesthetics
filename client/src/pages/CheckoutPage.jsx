@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useGlobalContext } from '../provider/GlobalProvider'
-import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees'
+import { DisplayPriceInPesos } from '../utils/DisplayPriceInPesos'
 import AddAddress from '../components/AddAddress'
 import { useSelector } from 'react-redux'
 import AxiosToastError from '../utils/AxiosToastError'
@@ -125,7 +125,7 @@ const CheckoutPage = () => {
             <h3 className='font-semibold'>Bill details</h3>
             <div className='flex gap-4 justify-between ml-1'>
               <p>Items total</p>
-              <p className='flex items-center gap-2'><span className='line-through text-neutral-400'>{DisplayPriceInRupees(notDiscountTotalPrice)}</span><span>{DisplayPriceInRupees(totalPrice)}</span></p>
+              <p className='flex items-center gap-2'><span className='line-through text-neutral-400'>{DisplayPriceInPesos(notDiscountTotalPrice)}</span><span>{DisplayPriceInPesos(totalPrice)}</span></p>
             </div>
             <div className='flex gap-4 justify-between ml-1'>
               <p>Quntity total</p>
@@ -137,13 +137,13 @@ const CheckoutPage = () => {
             </div>
             <div className='font-semibold flex items-center justify-between gap-4'>
               <p >Grand total</p>
-              <p>{DisplayPriceInRupees(totalPrice)}</p>
+              <p>{DisplayPriceInPesos(totalPrice)}</p>
             </div>
           </div>
           <div className='w-full flex flex-col gap-4'>
-            <button className='py-2 px-4 bg-green-600 hover:bg-green-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>Online Payment</button>
+            <button className='py-2 px-4 bg-red-600 hover:bg-red-700 rounded text-white font-semibold' onClick={handleOnlinePayment}>Online Payment</button>
 
-            <button className='py-2 px-4 border-2 border-green-600 font-semibold text-green-600 hover:bg-green-600 hover:text-white' onClick={handleCashOnDelivery}>Cash on Delivery</button>
+            <button className='py-2 px-4 border-2 border-red-600 font-semibold text-red-600 hover:bg-red-600 hover:text-white' onClick={handleCashOnDelivery}>Cash on Delivery</button>
           </div>
         </div>
       </div>

@@ -73,7 +73,7 @@ const CategoryPage = () => {
 
   return (
     <section className=''>
-        <div className='p-2   bg-white shadow-md flex items-center justify-between'>
+        <div className='p-2   bg-black shadow-md flex items-center justify-between'>
             <h2 className='font-semibold'>Category</h2>
             <button onClick={()=>setOpenUploadCategory(true)} className='text-sm border border-primary-200 hover:bg-primary-200 px-3 py-1 rounded'>Add Category</button>
         </div>
@@ -97,7 +97,7 @@ const CategoryPage = () => {
                                 <button onClick={()=>{
                                     setOpenEdit(true)
                                     setEditData(category)
-                                }} className='flex-1 bg-green-100 hover:bg-green-200 text-green-600 font-medium py-1 rounded'>
+                                }} className='flex-1 bg-red-100 hover:bg-red-200 text-red-600 font-medium py-1 rounded'>
                                     Edit
                                 </button>
                                 <button onClick={()=>{

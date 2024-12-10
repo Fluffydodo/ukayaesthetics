@@ -97,7 +97,7 @@ const Profile = () => {
                 <input
                     type='text'
                     placeholder='Enter your name' 
-                    className='p-2 bg-blue-50 outline-none border focus-within:border-primary-200 rounded'
+                    className='p-2 bg-black outline-none border focus-within:border-primary-200 rounded'
                     value={userData.name}
                     name='name'
                     onChange={handleOnChange}
@@ -110,7 +110,7 @@ const Profile = () => {
                     type='email'
                     id='email'
                     placeholder='Enter your email' 
-                    className='p-2 bg-blue-50 outline-none border focus-within:border-primary-200 rounded'
+                    className='p-2 bg-black outline-none border focus-within:border-primary-200 rounded'
                     value={userData.email}
                     name='email'
                     onChange={handleOnChange}
@@ -123,7 +123,7 @@ const Profile = () => {
                     type='text'
                     id='mobile'
                     placeholder='Enter your mobile' 
-                    className='p-2 bg-blue-50 outline-none border focus-within:border-primary-200 rounded'
+                    className='p-2 bg-black outline-none border focus-within:border-primary-200 rounded'
                     value={userData.mobile}
                     name='mobile'
                     onChange={handleOnChange}

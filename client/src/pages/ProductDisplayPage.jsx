@@ -4,7 +4,7 @@ import SummaryApi from '../common/SummaryApi'
 import Axios from '../utils/Axios'
 import AxiosToastError from '../utils/AxiosToastError'
 import { FaAngleRight,FaAngleLeft } from "react-icons/fa6";
-import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees'
+import { DisplayPriceInPesos } from '../utils/DisplayPriceInPesos'
 import Divider from '../components/Divider'
 import image1 from '../assets/minute_delivery.png'
 import image2 from '../assets/Best_Prices_Offers.png'
@@ -126,24 +126,24 @@ const ProductDisplayPage = () => {
 
 
         <div className='p-4 lg:pl-7 text-base lg:text-lg'>
-            <p className='bg-green-300 w-fit px-2 rounded-full'>10 Min</p>
+            <p className='bg-red-300 w-fit px-2 rounded-full'>10 Min</p>
             <h2 className='text-lg font-semibold lg:text-3xl'>{data.name}</h2>  
             <p className=''>{data.unit}</p> 
             <Divider/>
             <div>
               <p className=''>Price</p> 
               <div className='flex items-center gap-2 lg:gap-4'>
-                <div className='border border-green-600 px-4 py-2 rounded bg-green-50 w-fit'>
-                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInRupees(pricewithDiscount(data.price,data.discount))}</p>
+                <div className='border border-red-600 px-4 py-2 rounded bg-black w-fit'>
+                    <p className='font-semibold text-lg lg:text-xl'>{DisplayPriceInPesos(pricewithDiscount(data.price,data.discount))}</p>
                 </div>
                 {
                   data.discount && (
-                    <p className='line-through'>{DisplayPriceInRupees(data.price)}</p>
+                    <p className='line-through'>{DisplayPriceInPesos(data.price)}</p>
                   )
                 }
                 {
                   data.discount && (
-                    <p className="font-bold text-green-600 lg:text-2xl">{data.discount}% <span className='text-base text-neutral-500'>Discount</span></p>
+                    <p className="font-bold text-red-600 lg:text-2xl">{data.discount}% <span className='text-base text-neutral-500'>Discount</span></p>
                   )
                 }
                 
@@ -156,7 +156,7 @@ const ProductDisplayPage = () => {
                   <p className='text-lg text-red-500 my-2'>Out of Stock</p>
                 ) 
                 : (
-                  // <button className='my-4 px-4 py-1 bg-green-600 hover:bg-green-700 text-white rounded'>Add</button>
+                  // <button className='my-4 px-4 py-1 bg-red-600 hover:bg-red-700 text-white rounded'>Add</button>
                   <div className='my-4'>
                     <AddToCartButton data={data}/>
                   </div>
@@ -164,7 +164,7 @@ const ProductDisplayPage = () => {
               }
            
 
-            <h2 className='font-semibold'>Why shop from binkeyit? </h2>
+            <h2 className='font-semibold'>Why shop from Ukay Aesthetics? </h2>
             <div>
                   <div className='flex  items-center gap-4 my-4'>
                       <img
@@ -174,7 +174,7 @@ const ProductDisplayPage = () => {
                       />
                       <div className='text-sm'>
                         <div className='font-semibold'>Superfast Delivery</div>
-                        <p>Get your orer delivered to your doorstep at the earliest from dark stores near you.</p>
+                        <p>Get your order delivered to your doorstep at the earliest from dark stores near you.</p>
                       </div>
                   </div>
                   <div className='flex  items-center gap-4 my-4'>
@@ -185,7 +185,7 @@ const ProductDisplayPage = () => {
                       />
                       <div className='text-sm'>
                         <div className='font-semibold'>Best Prices & Offers</div>
-                        <p>Best price destination with offers directly from the nanufacturers.</p>
+                        <p>Best price destination with offers directly from the manufacturers.</p>
                       </div>
                   </div>
                   <div className='flex  items-center gap-4 my-4'>
@@ -196,7 +196,7 @@ const ProductDisplayPage = () => {
                       />
                       <div className='text-sm'>
                         <div className='font-semibold'>Wide Assortment</div>
-                        <p>Choose from 5000+ products across food personal care, household & other categories.</p>
+                        <p>Choose from 5000+ clothing products.</p>
                       </div>
                   </div>
             </div>

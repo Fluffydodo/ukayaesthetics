@@ -8,7 +8,7 @@ const MyOrders = () => {
   console.log("order Items",orders)
   return (
     <div>
-      <div className='bg-white shadow-md p-3 font-semibold'>
+      <div className='bg-black shadow-md p-3 font-semibold'>
         <h1>Order</h1>
       </div>
         {

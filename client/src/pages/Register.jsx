@@ -73,7 +73,7 @@ const Register = () => {
     return (
         <section className='w-full container mx-auto px-2'>
             <div className='bg-white my-4 w-full max-w-lg mx-auto rounded p-7'>
-                <p>Welcome to Binkeyit</p>
+                <p>Welcome to Ukay Aesthetics</p>
 
                 <form className='grid gap-4 mt-6' onSubmit={handleSubmit}>
                     <div className='grid gap-1'>
@@ -82,7 +82,7 @@ const Register = () => {
                             type='text'
                             id='name'
                             autoFocus
-                            className='bg-blue-50 p-2 border rounded outline-none focus:border-primary-200'
+                            className='bg-black p-2 border rounded outline-none focus:border-primary-200'
                             name='name'
                             value={data.name}
                             onChange={handleChange}
@@ -94,7 +94,7 @@ const Register = () => {
                         <input
                             type='email'
                             id='email'
-                            className='bg-blue-50 p-2 border rounded outline-none focus:border-primary-200'
+                            className='bg-black p-2 border rounded outline-none focus:border-primary-200'
                             name='email'
                             value={data.email}
                             onChange={handleChange}
@@ -103,7 +103,7 @@ const Register = () => {
                     </div>
                     <div className='grid gap-1'>
                         <label htmlFor='password'>Password :</label>
-                        <div className='bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200'>
+                        <div className='bg-black p-2 border rounded flex items-center focus-within:border-primary-200'>
                             <input
                                 type={showPassword ? "text" : "password"}
                                 id='password'
@@ -126,7 +126,7 @@ const Register = () => {
                     </div>
                     <div className='grid gap-1'>
                         <label htmlFor='confirmPassword'>Confirm Password :</label>
-                        <div className='bg-blue-50 p-2 border rounded flex items-center focus-within:border-primary-200'>
+                        <div className='bg-black p-2 border rounded flex items-center focus-within:border-primary-200'>
                             <input
                                 type={showConfirmPassword ? "text" : "password"}
                                 id='confirmPassword'
@@ -148,12 +148,12 @@ const Register = () => {
                         </div>
                     </div>
 
-                    <button disabled={!valideValue} className={` ${valideValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500" }    text-white py-2 rounded font-semibold my-3 tracking-wide`}>Register</button>
+                    <button disabled={!valideValue} className={` ${valideValue ? "bg-red-800 hover:bg-red-700" : "bg-gray-500" }    text-white py-2 rounded font-semibold my-3 tracking-wide`}>Register</button>
 
                 </form>
 
                 <p>
-                    Already have account ? <Link to={"/login"} className='font-semibold text-green-700 hover:text-green-800'>Login</Link>
+                    Already have account ? <Link to={"/login"} className='font-semibold text-red-700 hover:text-red-800'>Login</Link>
                 </p>
             </div>
         </section>

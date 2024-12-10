@@ -8,7 +8,7 @@ import { BsCart4 } from "react-icons/bs";
 import { useSelector } from 'react-redux';
 import { GoTriangleDown, GoTriangleUp  } from "react-icons/go";
 import UserMenu from './UserMenu';
-import { DisplayPriceInRupees } from '../utils/DisplayPriceInRupees';
+import { DisplayPriceInPesos } from '../utils/DisplayPriceInPesos';
 import { useGlobalContext } from '../provider/GlobalProvider';
 import DisplayCartItem from './DisplayCartItem';
 
@@ -57,7 +57,7 @@ const Header = () => {
     // },[cartItem])
 
   return (
-    <header className='h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-white'>
+    <header className='h-24 lg:h-20 lg:shadow-md sticky top-0 z-40 flex flex-col justify-center gap-1 bg-black'>
         {
             !(isSearchPage && isMobile) && (
                 <div className='container mx-auto flex items-center px-2 justify-between'>
@@ -113,7 +113,7 @@ const Header = () => {
                                                     {
                                                         openUserMenu && (
                                                             <div className='absolute right-0 top-12'>
-                                                                <div className='bg-white rounded p-4 min-w-52 lg:shadow-lg'>
+                                                                <div className='bg-black rounded p-4 min-w-52 lg:shadow-lg'>
                                                                     <UserMenu close={handleCloseUserMenu}/>
                                                                 </div>
                                                             </div>
@@ -122,10 +122,10 @@ const Header = () => {
                                                     
                                                 </div>
                                             ) : (
-                                                <button onClick={redirectToLoginPage} className='text-lg px-2'>Login</button>
+                                                <button onClick={redirectToLoginPage} className='text-white px-2'>Login</button>
                                             )
                                         }
-                                        <button onClick={()=>setOpenCartSection(true)} className='flex items-center gap-2 bg-green-800 hover:bg-green-700 px-3 py-2 rounded text-white'>
+                                        <button onClick={()=>setOpenCartSection(true)} className='flex items-center gap-2 bg-red-800 hover:bg-red-700 px-3 py-2 rounded text-white'>
                                             {/**add to card icons */}
                                             <div className='animate-bounce'>
                                                 <BsCart4 size={26}/>
@@ -135,7 +135,7 @@ const Header = () => {
                                                     cartItem[0] ? (
                                                         <div>
                                                             <p>{totalQty} Items</p>
-                                                            <p>{DisplayPriceInRupees(totalPrice)}</p>
+                                                            <p>{DisplayPriceInPesos(totalPrice)}</p>
                                                         </div>
                                                     ) : (
                                                         <p>My Cart</p>

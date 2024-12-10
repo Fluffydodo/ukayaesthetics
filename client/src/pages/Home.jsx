@@ -29,7 +29,7 @@ const Home = () => {
 
 
   return (
-   <section className='bg-white'>
+   <section className='bg-black'>
       <div className='container mx-auto'>
           <div className={`w-full h-full min-h-48 bg-blue-100 rounded ${!banner && "animate-pulse my-2" } `}>
               <img
@@ -50,7 +50,7 @@ const Home = () => {
             loadingCategory ? (
               new Array(12).fill(null).map((c,index)=>{
                 return(
-                  <div key={index+"loadingcategory"} className='bg-white rounded p-4 min-h-36 grid gap-2 shadow animate-pulse'>
+                  <div key={index+"loadingcategory"} className='bg-black rounded p-4 min-h-36 grid gap-2 shadow animate-pulse'>
                     <div className='bg-blue-100 min-h-24 rounded'></div>
                     <div className='bg-blue-100 h-8 rounded'></div>
                   </div>

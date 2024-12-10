@@ -138,12 +138,12 @@ const ResetPassword = () => {
                         </div>
                     </div>
              
-                    <button disabled={!valideValue} className={` ${valideValue ? "bg-green-800 hover:bg-green-700" : "bg-gray-500" }    text-white py-2 rounded font-semibold my-3 tracking-wide`}>Change Password</button>
+                    <button disabled={!valideValue} className={` ${valideValue ? "bg-red-800 hover:bg-red-700" : "bg-gray-500" }    text-white py-2 rounded font-semibold my-3 tracking-wide`}>Change Password</button>
 
                 </form>
 
                 <p>
-                    Already have account? <Link to={"/login"} className='font-semibold text-green-700 hover:text-green-800'>Login</Link>
+                    Already have account? <Link to={"/login"} className='font-semibold text-red-700 hover:text-red-800'>Login</Link>
                 </p>
             </div>
         </section>

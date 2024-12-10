@@ -35,7 +35,7 @@ const Search = () => {
         <div>
             {
                 (isMobile && isSearchPage ) ? (
-                    <Link to={"/"} className='flex justify-center items-center h-full p-2 m-1 group-focus-within:text-primary-200 bg-white rounded-full shadow-md'>
+                    <Link to={"/"} className='flex justify-center items-center h-full p-2 m-1 group-focus-within:text-primary-200 bg-black rounded-full shadow-md'>
                         <FaArrowLeft size={20}/>
                     </Link>
                 ) :(
@@ -53,23 +53,23 @@ const Search = () => {
                         <TypeAnimation
                                 sequence={[
                                     // Same substring at the start will only be typed out once, initially
-                                    'Search "milk"',
+                                    'Search "shirts"',
                                     1000, // wait 1s before replacing "Mice" with "Hamsters"
-                                    'Search "bread"',
+                                    'Search "shoes"',
                                     1000,
-                                    'Search "sugar"',
+                                    'Search "dresses"',
                                     1000,
-                                    'Search "panner"',
+                                    'Search "purses"',
                                     1000,
-                                    'Search "chocolate"',
+                                    'Search "hoodies"',
                                     1000,
-                                    'Search "curd"',
+                                    'Search "rushguards"',
                                     1000,
-                                    'Search "rice"',
+                                    'Search "formal"',
                                     1000,
-                                    'Search "egg"',
+                                    'Search "jeans"',
                                     1000,
-                                    'Search "chips"',
+                                    'Search "slippers"',
                                 ]}
                                 wrapper="span"
                                 speed={50}
@@ -81,7 +81,7 @@ const Search = () => {
                     <div className='w-full h-full'>
                         <input
                             type='text'
-                            placeholder='Search for atta dal and more.'
+                            placeholder='Search for clothes and more.'
                             autoFocus
                             defaultValue={searchText}
                             className='bg-transparent w-full h-full outline-none'

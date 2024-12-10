@@ -42,7 +42,7 @@ const UserMenu = ({close}) => {
       }
    }
   return (
-    <div>
+    <div className = 'bg-black rounded p-4 min-w-52 lg:shadow-lg'>
         <div className='font-semibold'>My Account</div>
         <div className='text-sm flex items-center gap-2'>
           <span className='max-w-52 text-ellipsis line-clamp-1'>{user.name || user.mobile} <span className='text-medium text-red-600'>{user.role === "ADMIN" ? "(Admin)" : "" }</span></span>
