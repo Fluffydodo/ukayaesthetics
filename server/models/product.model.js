@@ -48,6 +48,10 @@ const productSchema = new mongoose.Schema({
         type : String,
         default : ""
     },
+    ratings:{
+        userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+        rating: { type: Number, min: 1, max: 5 },
+    },
     more_details : {
         type : Object,
         default : {}
@@ -59,6 +63,12 @@ const productSchema = new mongoose.Schema({
 },{
     timestamps : true
 })
+
+productSchema.methods.calculateAverageRating = function() {
+    if (this.ratings.length === 0) return 0;
+    const sum = this.ratings.reduce((acc, { rating }) => acc + rating, 0);
+    return (sum / this.ratings.length).toFixed(1);
+};
 
 //create a text index
 productSchema.index({

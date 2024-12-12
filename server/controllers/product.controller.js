@@ -100,6 +100,47 @@ export const getProductController = async(request,response)=>{
     }
 }
 
+export const rateProduct = async (req, res) => {
+    try {
+        const { productId } = req.params;
+        const { rating } = req.body;
+        const userId = req.userId; // Retrieved from auth middleware
+
+        if (!rating || rating < 1 || rating > 5) {
+            return res.status(400).json({ message: "Rating must be between 1 and 5." });
+        }
+
+        const product = await ProductModel.findById(productId);
+        if (!product) {
+            return res.status(404).json({ message: "Product not found." });
+        }
+
+        // Check if the user already rated the product
+        const existingRatingIndex = product.ratings.findIndex(
+            (r) => r.userId.toString() === userId
+        );
+
+        if (existingRatingIndex > -1) {
+            // Update the existing rating
+            product.ratings[existingRatingIndex].rating = rating;
+        } else {
+            // Add a new rating
+            product.ratings.push({ userId, rating });
+        }
+
+        await product.save();
+        const avgRating = product.calculateAverageRating();
+
+        return res.status(200).json({
+            message: "Rating updated successfully.",
+            averageRating: avgRating,
+            ratings: product.ratings
+        });
+    } catch (error) {
+        return res.status(500).json({ message: error.message || error });
+    }
+};
+
 export const getProductByCategory = async(request,response)=>{
     try {
         const { id } = request.body 
