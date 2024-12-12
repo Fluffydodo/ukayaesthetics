@@ -20,6 +20,8 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
     image: propsData.image,
     category: propsData.category,
     subCategory: propsData.subCategory,
+    supplier: propsData.supplier,
+    shipment: propsData.shipment,
     unit: propsData.unit,
     stock: propsData.stock,
     price: propsData.price,
@@ -132,6 +134,8 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
           image: [],
           category: [],
           subCategory: [],
+          supplier: "",
+          shipment: "",
           unit: "",
           stock: "",
           price: "",
@@ -320,6 +324,34 @@ const EditProductAdmin = ({ close ,data : propsData,fetchProductData}) => {
                     }
                   </div>
                 </div>
+              </div>
+
+              <div className='grid gap-1'>
+                <label htmlFor='supplier' className='font-medium'>Supplier</label>
+                <input
+                  id='supplier'
+                  type='text'
+                  placeholder='Enter product supplier'
+                  name='supplier'
+                  value={data.supplier}
+                  onChange={handleChange}
+                  required
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
+                />
+              </div>
+
+              <div className='grid gap-1'>
+                <label htmlFor='shipment' className='font-medium'>Shipment</label>
+                <input
+                  id='shipment'
+                  type='text'
+                  placeholder='Enter product shipment'
+                  name='shipment'
+                  value={data.shipment}
+                  onChange={handleChange}
+                  required
+                  className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
+                />
               </div>
 
               <div className='grid gap-1'>

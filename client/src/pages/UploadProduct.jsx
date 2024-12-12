@@ -19,6 +19,8 @@ const UploadProduct = () => {
       image : [],
       category : [],
       subCategory : [],
+      supplier : "",
+      shipment : "",
       unit : "",
       stock : "",
       price : "",
@@ -127,6 +129,8 @@ const UploadProduct = () => {
             image : [],
             category : [],
             subCategory : [],
+            supplier : "",
+            shipment : "",
             unit : "",
             stock : "",
             price : "",
@@ -316,6 +320,34 @@ const UploadProduct = () => {
                 </div>
 
                 <div className='grid gap-1'>
+                  <label htmlFor='supplier' className='font-medium'>Supplier</label>
+                  <input 
+                    id='supplier'
+                    type='text'
+                    placeholder='Enter product supplier'
+                    name='supplier'
+                    value={data.supplier}
+                    onChange={handleChange}
+                    required
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
+                  />
+                </div>
+
+                <div className='grid gap-1'>
+                  <label htmlFor='shipment' className='font-medium'>Shipment</label>
+                  <input 
+                    id='shipment'
+                    type='text'
+                    placeholder='Enter product shipment'
+                    name='shipment'
+                    value={data.shipment}
+                    onChange={handleChange}
+                    required
+                    className='bg-black p-2 outline-none border focus-within:border-primary-200 rounded'
+                  />
+                </div>
+
+                <div className='grid gap-1'>
                   <label htmlFor='unit' className='font-medium'>Unit</label>
                   <input 
                     id='unit'
@@ -402,7 +434,7 @@ const UploadProduct = () => {
                     })
                   }
 
-                <div onClick={()=>setOpenAddField(true)} className=' hover:bg-primary-200 bg-white py-1 px-3 w-32 text-center font-semibold border border-primary-200 hover:text-neutral-900 cursor-pointer rounded'>
+                <div onClick={()=>setOpenAddField(true)} className=' hover:bg-primary-200 bg-black py-1 px-3 w-32 text-center font-semibold border border-primary-200 hover:text-neutral-900 cursor-pointer rounded'>
                   Add Fields
                 </div>
 

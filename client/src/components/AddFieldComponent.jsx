@@ -19,7 +19,7 @@ const AddFieldComponent = ({close,value,onChange,submit}) => {
             />
             <button
                 onClick={submit}
-                className='bg-primary-200 hover:bg-primary-100 px-4 py-2 rounded mx-auto w-fit block'
+                className='bg-black hover:bg-primary-100 px-4 py-2 rounded mx-auto w-fit block'
             >Add Field</button>
         </div>
    </section>

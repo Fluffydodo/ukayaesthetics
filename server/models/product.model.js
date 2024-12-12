@@ -20,6 +20,14 @@ const productSchema = new mongoose.Schema({
             ref : 'subCategory'
         }
     ],
+    supplier : {
+        type : String,
+        default : ""
+    },
+    shipment : {
+        type : String,
+        default : ""
+    },
     unit : {
         type : String,
         default : ""
